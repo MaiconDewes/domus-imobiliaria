@@ -2,81 +2,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Domus Imobiliária</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fdf8f4;
-            color: #333;
-        }
-        header {
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            position: absolute;
-            width: 100%;
-            z-index: 10;
-        }
-        .carousel {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .carousel img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .carousel img.active {
-            opacity: 1;
-        }
-        .content {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h1 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.2rem;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domus Imobiliária</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Domus Imobiliária</h1>
-    </header>
-    <div class="carousel">
-        <img src="imovel1.jpg" class="active" alt="Imóvel 1" />
-        <img src="imovel2.jpg" alt="Imóvel 2" />
-        <img src="imovel3.jpg" alt="Imóvel 3" />
-        <img src="imovel4.jpg" alt="Imóvel 4" />
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-md p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl text-gray-900 font-semibold">Domus Imobiliária</h1>
+      <nav class="space-x-6 text-gray-600 font-medium">
+        <a href="#imoveis" class="hover:text-blue-600">Imóveis</a>
+        <a href="#sobre" class="hover:text-blue-600">Sobre</a>
+        <a href="#contato" class="hover:text-blue-600">Contato</a>
+      </nav>
     </div>
-    <div class="content">
-        <h1>Todas as Melhores Opções</h1>
-        <p>Explore imóveis residenciais, terrenos e áreas ideais para seu estilo de vida. Conforto, segurança e qualidade reunidos em um só lugar.</p>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Encontre seu lar ideal com sofisticação</h2>
+      <p class="text-lg text-gray-600">Imóveis selecionados com conforto, design e localização privilegiada.</p>
     </div>
-    <script>
-        let index = 0;
-        const images = document.querySelectorAll('.carousel img');
-        setInterval(() => {
-            images[index].classList.remove('active');
-            index = (index + 1) % images.length;
-            images[index].classList.add('active');
-        }, 3000);
-    </script>
+  </section>
+
+  <!-- Galeria de Imóveis -->
+  <section id="imoveis" class="py-16 max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Nossos Destaques</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Substitua os links das imagens pelo caminho do seu repositório GitHub -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/imagem1.jpg" alt="Imóvel 1" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-900">Apartamento Luxo</h3>
+          <p class="text-gray-600">Vista para o mar, 3 suítes, área gourmet.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/imagem2.jpg" alt="Imóvel 2" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-900">Casa Moderna</h3>
+          <p class="text-gray-600">Jardim integrado e iluminação natural.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/imagem3.jpg" alt="Imóvel 3" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-900">Cobertura Duplex</h3>
+          <p class="text-gray-600">Piscina privativa e vista panorâmica.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/imagem4.jpg" alt="Imóvel 4" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-900">Studio Prático</h3>
+          <p class="text-gray-600">Ideal para investidores, mobiliado.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+        <img src="https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/imagem5.jpg" alt="Imóvel 5" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-900">Residência Clássica</h3>
+          <p class="text-gray-600">Amplo quintal e estrutura tradicional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="py-16 bg-white px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">Sobre a Domus</h2>
+      <p class="text-lg text-gray-600">A Domus Imobiliária é especializada em conectar pessoas aos imóveis dos seus sonhos. Oferecemos atendimento personalizado, curadoria de imóveis sofisticados e consultoria completa em todo o processo de compra e venda.</p>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-16 bg-gray-100 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">Fale Conosco</h2>
+      <p class="text-gray-600 mb-6">Envie um e-mail para <a href="mailto:contato@domusimobiliaria.com" class="text-blue-600 font-medium">contato@domusimobiliaria.com</a> ou preencha o formulário no nosso site oficial.</p>
+      <a href="mailto:contato@domusimobiliaria.com" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition">Entrar em contato</a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-white py-6 text-center text-sm text-gray-500">
+    © 2025 Domus Imobiliária. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
