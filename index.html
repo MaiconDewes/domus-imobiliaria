@@ -17,26 +17,55 @@
     }
     .sticky-header {
       transition: all 0.3s ease;
+      background: linear-gradient(to bottom, #e4d5c4 0%, #cbb7a3 100%);
     }
     .shrink {
       padding-top: 0.5rem !important;
       padding-bottom: 0.5rem !important;
     }
     .shrink h1 {
-      font-size: 1.25rem !important; /* text-xl */
+      font-size: 1.25rem !important;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
   </style>
 </head>
 <body class="text-gray-800">
 
-  <!-- Header Fixo -->
-  <header id="header" class="sticky top-0 z-50 bg-[#e4d5c4] shadow-md p-4 sticky-header">
-    <div class="max-w-7xl mx-auto flex justify-between items-center transition-all">
+  <!-- Cabeçalho Fixo com Degradê -->
+  <header id="header" class="sticky top-0 z-50 shadow-md p-4 sticky-header">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
       <h1 class="text-3xl text-gray-900 transition-all">Domus Imobiliária</h1>
-      <nav class="space-x-6 text-gray-700 font-medium">
-        <a href="#imoveis" class="hover:text-blue-600">Imóveis</a>
-        <a href="#sobre" class="hover:text-blue-600">Sobre</a>
-        <a href="#contato" class="hover:text-blue-600">Contato</a>
+      <nav class="flex space-x-6 text-gray-700 font-medium">
+        <div class="relative dropdown">
+          <span class="cursor-pointer hover:text-blue-600">Casas</span>
+          <div class="absolute dropdown-menu hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-50">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Casa Moderna</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Casa Clássica</a>
+          </div>
+        </div>
+        <div class="relative dropdown">
+          <span class="cursor-pointer hover:text-blue-600">Apartamentos</span>
+          <div class="absolute dropdown-menu hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-50">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Luxo Vista Mar</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Cobertura Duplex</a>
+          </div>
+        </div>
+        <div class="relative dropdown">
+          <span class="cursor-pointer hover:text-blue-600">Terrenos</span>
+          <div class="absolute dropdown-menu hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-50">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Residencial</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Comercial</a>
+          </div>
+        </div>
+        <div class="relative dropdown">
+          <span class="cursor-pointer hover:text-blue-600">Áreas</span>
+          <div class="absolute dropdown-menu hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-50">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Área Rural</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Área Urbana</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -49,7 +78,7 @@
     </div>
   </section>
 
-  <!-- Campo de busca -->
+  <!-- Busca -->
   <section class="max-w-4xl mx-auto px-4 pb-10">
     <div class="bg-white rounded-xl shadow p-6">
       <form class="flex flex-col sm:flex-row gap-4 items-center">
@@ -59,11 +88,10 @@
     </div>
   </section>
 
-  <!-- Galeria de Imóveis -->
+  <!-- Galeria -->
   <section id="imoveis" class="py-16 max-w-7xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Nossos Destaques</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Imóvel 1 -->
       <div class="bg-white rounded-2xl shadow-md overflow-hidden">
         <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa1.jpg" alt="Imóvel 1" class="w-full h-60 object-cover">
         <div class="p-4">
@@ -71,7 +99,6 @@
           <p class="text-gray-600">Vista para o mar, 3 suítes, área gourmet.</p>
         </div>
       </div>
-      <!-- Imóvel 2 -->
       <div class="bg-white rounded-2xl shadow-md overflow-hidden">
         <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa2.jpg" alt="Imóvel 2" class="w-full h-60 object-cover">
         <div class="p-4">
@@ -79,7 +106,6 @@
           <p class="text-gray-600">Jardim integrado e iluminação natural.</p>
         </div>
       </div>
-      <!-- Imóvel 3 -->
       <div class="bg-white rounded-2xl shadow-md overflow-hidden">
         <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa3.jpg" alt="Imóvel 3" class="w-full h-60 object-cover">
         <div class="p-4">
@@ -87,7 +113,6 @@
           <p class="text-gray-600">Piscina privativa e vista panorâmica.</p>
         </div>
       </div>
-      <!-- Imóvel 4 -->
       <div class="bg-white rounded-2xl shadow-md overflow-hidden">
         <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa4.jpg" alt="Imóvel 4" class="w-full h-60 object-cover">
         <div class="p-4">
@@ -95,7 +120,6 @@
           <p class="text-gray-600">Ideal para investidores, mobiliado.</p>
         </div>
       </div>
-      <!-- Imóvel 5 -->
       <div class="bg-white rounded-2xl shadow-md overflow-hidden">
         <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa5.jpg" alt="Imóvel 5" class="w-full h-60 object-cover">
         <div class="p-4">
@@ -128,7 +152,7 @@
     © 2025 Domus Imobiliária. Todos os direitos reservados.
   </footer>
 
-  <!-- Script para efeito de shrink no scroll -->
+  <!-- Script para efeito de shrink -->
   <script>
     const header = document.getElementById("header");
     window.addEventListener("scroll", () => {
@@ -141,3 +165,4 @@
   </script>
 </body>
 </html>
+
