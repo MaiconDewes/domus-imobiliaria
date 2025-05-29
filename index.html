@@ -29,13 +29,20 @@
     .dropdown:hover .dropdown-menu {
       display: block;
     }
-    .carousel {
+    .carousel-track {
       display: flex;
+      width: max-content;
       gap: 1rem;
-      animation: scroll-left 30s linear infinite;
     }
-    .carousel-reverse {
-      animation: scroll-right 30s linear infinite;
+    .carousel {
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-left .carousel-track {
+      animation: scroll-left 60s linear infinite;
+    }
+    .carousel-right .carousel-track {
+      animation: scroll-right 60s linear infinite;
     }
     @keyframes scroll-left {
       0% { transform: translateX(0); }
@@ -45,10 +52,17 @@
       0% { transform: translateX(-50%); }
       100% { transform: translateX(0); }
     }
-    .carousel-container {
-      overflow: hidden;
-    }
   </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 60) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+  </script>
 </head>
 <body class="text-gray-800">
 
@@ -96,26 +110,60 @@
     </div>
   </section>
 
-  <!-- Busca -->
-  <section class="max-w-4xl mx-auto px-4 pb-10">
-    <div class="bg-white rounded-xl shadow p-6">
-      <form class="flex flex-col sm:flex-row gap-4 items-center">
-        <input type="text" placeholder="Busque por cidade, bairro ou tipo..." class="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Buscar</button>
-      </form>
+  <!-- Carrossel de Destaques -->
+  <section class="py-16 max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Nossos Destaques</h2>
+    <div class="carousel carousel-left">
+      <div class="carousel-track">
+        <img src="casa1.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        <img src="casa2.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        <img src="casa3.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        <img src="casa4.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        <img src="casa5.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
+      </div>
     </div>
   </section>
 
-  <!-- Nossos Destaques com Carrossel -->
-  <section class="py-16 max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Nossos Destaques</h2>
-    <div class="carousel-container">
-      <div class="carousel">
-        <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa1.jpg" class="rounded-xl w-full h-60 object-cover min-w-[300px]">
-        <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa2.jpg" class="rounded-xl w-full h-60 object-cover min-w-[300px]">
-        <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa3.jpg" class="rounded-xl w-full h-60 object-cover min-w-[300px]">
-        <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa4.jpg" class="rounded-xl w-full h-60 object-cover min-w-[300px]">
-        <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa5.jpeg" class="rounded-xl w-full h-60 object-cover min-w-[300px]">
+  <!-- Categorias -->
+  <section class="max-w-7xl mx-auto px-4 pb-20 space-y-16">
+    <div>
+      <h3 class="text-2xl font-semibold mb-4">Casas</h3>
+      <div class="carousel carousel-left">
+        <div class="carousel-track">
+          <img src="casa1.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa2.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa3.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-2xl font-semibold mb-4">Apartamentos</h3>
+      <div class="carousel carousel-right">
+        <div class="carousel-track">
+          <img src="casa4.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa5.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa1.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-2xl font-semibold mb-4">Terrenos</h3>
+      <div class="carousel carousel-left">
+        <div class="carousel-track">
+          <img src="casa2.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa3.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa4.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-2xl font-semibold mb-4">Áreas</h3>
+      <div class="carousel carousel-right">
+        <div class="carousel-track">
+          <img src="casa5.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa1.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+          <img src="casa2.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
+        </div>
       </div>
     </div>
   </section>
@@ -140,52 +188,6 @@
         <li>Regularização de documentação.</li>
         <li>Captação de imóveis para venda e locação.</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Categorias com Carrossel Alternado -->
-  <section class="max-w-7xl mx-auto px-4 pb-20">
-    <div class="grid gap-16">
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">Casas</h3>
-        <div class="carousel-container">
-          <div class="carousel">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa1.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa2.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa3.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">Apartamentos</h3>
-        <div class="carousel-container">
-          <div class="carousel carousel-reverse">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa4.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa5.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa1.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">Terrenos</h3>
-        <div class="carousel-container">
-          <div class="carousel">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa2.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa3.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa4.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">Áreas</h3>
-        <div class="carousel-container">
-          <div class="carousel carousel-reverse">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa5.jpg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa1.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
-            <img src="https://raw.githubusercontent.com/MaiconDewes/domus-imobiliaria/main/casa2.jpeg" class="rounded-xl h-60 object-cover min-w-[300px]">
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
