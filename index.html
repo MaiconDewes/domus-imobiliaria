@@ -145,17 +145,17 @@
       <h2>Seu patrimônio merece visibilidade. Seu projeto de vida merece solidez.</h2>
     </section>
 
-    ${["Destaques", "Casas", "Apartamentos", "Terrenos", "Áreas"].map((categoria, idx) => {
+    {["Destaques", "Casas", "Apartamentos", "Terrenos", "Áreas"].map((categoria, idx) => {
       const directionClass = idx % 2 === 0 ? 'right' : 'reverse';
       return `
         <section>
-          <h2>${categoria}</h2>
+          <h2>{categoria}</h2>
           <div class="carousel ${directionClass}">
             <div class="carousel-track">
-              ${Array.from({ length: 10 }, (_, i) => `
+              {Array.from({ length: 10 }, (_, i) => `
                 <div class="carousel-item">
-                  <img src="casa${(i % 5) + 1}.jpg" alt="Imagem de ${categoria}">
-                  <div class="carousel-caption">${categoria} ${i + 1}</div>
+                  <img src="/casa${(i % 5) + 1}.jpg" alt="Imagem de ${categoria}" />
+                  <div class="carousel-caption">{categoria} {i + 1}</div>
                 </div>
               `).join('')}
             </div>
@@ -197,3 +197,4 @@
     </script>
   </body>
 </html>
+
